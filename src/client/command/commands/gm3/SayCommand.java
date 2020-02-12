@@ -34,6 +34,6 @@ public class SayCommand extends Command {
     @Override
     public void execute(MapleClient c, String[] params) {
         MapleCharacter player = c.getPlayer();
-        Server.getInstance().broadcastMessage(c.getWorld(), MaplePacketCreator.serverNotice(6, player.getname  + player.getLastCommandMessage()));
+        Server.getInstance().broadcastMessage(c.getWorld(), MaplePacketCreator.serverNotice(6,  "[" + player.getName() + "] "  + player.getLastCommandMessage()));
     }
 }

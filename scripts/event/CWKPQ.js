@@ -217,7 +217,7 @@ function setup(channel) {
 }
 
 function playerEntry(eim, player) {
-    eim.dropMessage(5, "[Expedition] " + player.getName() + " has entered the map.");
+    //eim.dropMessage(5, "[Expedition] " + player.getName() + " has entered the map.");
     var map = eim.getMapInstance(610030100 + (eim.getIntProperty("current_instance") * 100));
     player.changeMap(map, map.getPortal(0));
 }
@@ -247,7 +247,7 @@ function changedMap(eim, player, mapid) {
             end(eim);
         }
         else {
-            eim.dropMessage(5, "[Expedition] " + player.getName() + " has left the instance.");
+            //eim.dropMessage(5, "[Expedition] " + player.getName() + " has left the instance.");
             eim.unregisterPlayer(player);
         }
     } else {
@@ -303,7 +303,7 @@ function playerRevive(eim, player) {
         end(eim);
     }
     else {
-        eim.dropMessage(5, "[Expedition] " + player.getName() + " has left the instance.");
+        //eim.dropMessage(5, "[Expedition] " + player.getName() + " has left the instance.");
         eim.unregisterPlayer(player);
     }
 }

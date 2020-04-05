@@ -21,7 +21,7 @@
 	Default Maple TV
  */
 
-var status;
+/*var status;
  
 function start() {
         if (Packages.config.YamlConfig.config.server.USE_ENABLE_CUSTOM_NPC_SCRIPT) {
@@ -52,4 +52,9 @@ function action(mode, type, selection) {
                         cm.dispose();
                 }
         }
+}*/
+
+function start() {
+        cm.sendNext("Don't forget to watch MapleTV!");
+        cm.dispose();
 }

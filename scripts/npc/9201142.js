@@ -49,6 +49,7 @@ function action(mode, type, selection) {
 		);
     } else if (status == 1) {
 		if (selection == 0) {
+			selectedType = "belt";
 			cm.sendSimple("Which belt would you like to purchase?\r\n#r#eNote: Each belt requires the previous tier#n#k" + 
 				"\r\n#L0##b#e#v1132014# #z1132014##n#k (50 #v4000524#)#l\r\n" + 
 				"\r\n#L1##b#e#v1132015# #z1132015##n#k (250 #v4000524# + #v1132014#)#l\r\n" + 
@@ -95,7 +96,7 @@ function action(mode, type, selection) {
 			selectedItem = selection;
 			cm.sendYesNo("Are you sure you want to purchase #e#b#z" + belts[selection].id + "##n#k?\r\nYou will need:\r\n" + costStr);
 		}
-	} else if (status == 3) {
+	} else if (status == 3 && selectedType == "belt") {
 		for (var i = 0; i < belts[selectedItem].cost.length; i++) {
 			var cost = belts[selectedItem].cost[i];
 			if (!cm.haveItem(cost.id, cost.quantity)) {

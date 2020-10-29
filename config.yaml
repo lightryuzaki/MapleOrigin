@@ -4,10 +4,10 @@
 worlds:
     #Properties for Scania 0
   - flag: 3
-    server_message: Welcome back to Maple Origin! @commands - list of usable player commands. @tele - Lost Memories is the home hubmap! Enjoy the server! Summer Updated is now live, patching is required.
-    event_message: Welcome to MO Under the Sea!
+    server_message: MapleOrigin Spooky Season! Type @commands to see a list of useful player commands! Check out the Free Market for many extremely useful NPC's who will help you along your journey!
+    event_message: Spooktober!
     why_am_i_recommended: Welcome to MapleOrigin!!
-    channels: 6
+    channels: 4
     exp_rate: 1
     meso_rate: 1
     drop_rate: 1
@@ -241,7 +241,7 @@ server:
     USE_SERVER_AUTOASSIGNER: false       #HeavenMS-builtin autoassigner, uses algorithm based on distributing AP accordingly with required secondary stat on equipments.
     USE_REFRESH_RANK_MOVE: true
     USE_ENFORCE_ADMIN_ACCOUNT: false    #Forces accounts having GM characters to be treated as a "GM account" by the client (localhost). Some of the GM account perks is the ability to FLY, but unable to TRADE.
-    USE_ENFORCE_NOVICE_EXPRATE: false    #Hardsets experience rate 1x for beginners level 10 or under. Ideal for roaming on novice areas without caring too much about losing some stats.
+    USE_ENFORCE_NOVICE_EXPRATE: true    #Hardsets experience rate 1x for beginners level 10 or under. Ideal for roaming on novice areas without caring too much about losing some stats.
     USE_ENFORCE_HPMP_SWAP: true        #Forces players to reuse stats (via AP Resetting) located on HP/MP pool only inside the HP/MP stats.
     USE_ENFORCE_MOB_LEVEL_RANGE: true   #Players N levels below the killed mob will gain no experience from defeating it.
     USE_ENFORCE_JOB_LEVEL_RANGE: false  #Caps the player level on the minimum required to advance their current jobs.
@@ -307,7 +307,7 @@ server:
     PARTY_BONUS_EXP_RATE: 6.0            #Rate for the party exp bonus reward.
 
     #Miscellaneous Configuration
-    TIMEZONE: GMT-3
+    TIMEZONE: GMT
     USE_DISPLAY_NUMBERS_WITH_COMMA: true          #Enforce comma on displayed strings (use this when USE_UNITPRICE_WITH_COMMA is active and you still want to display comma-separated values).
     USE_UNITPRICE_WITH_COMMA: true                #Set this accordingly with the layout of the unitPrices on Item.wz XML's, whether it's using commas or dots to represent fractions.
     MAX_MONITORED_BUFFSTATS: 5                 #Limits accounting for "dormant" buff effects, that should take place when stronger stat buffs expires.
@@ -326,12 +326,12 @@ server:
     ITEM_EXPIRE_TIME: 180000    # (3 * 60 * 1000) Time before items start disappearing. Recommended to be set up to 3 minutes.
     KITE_EXPIRE_TIME: 3600000   # (60 * 60 * 1000) Time before kites (cash item) disappears.
     ITEM_MONITOR_TIME: 300000    # (5 * 60 * 1000) Interval between item monitoring tasks on maps, which checks for dangling (null) item objects on the map item history.
-    LOCK_MONITOR_TIME: 30000        # (30 * 1000) Waiting time for a lock to be released. If it reaches timeout, a critical server deadlock has made present.
+    LOCK_MONITOR_TIME: 60000        # (30 * 1000) Waiting time for a lock to be released. If it reaches timeout, a critical server deadlock has made present.
 
     #Map Monitor Configuration
-    ITEM_EXPIRE_CHECK: 10000        # (10 * 10000) Interval between item expiring tasks on maps, which checks and makes disappear expired items.
+    ITEM_EXPIRE_CHECK: 30000        # (10 * 10000) Interval between item expiring tasks on maps, which checks and makes disappear expired items.
     ITEM_LIMIT_ON_MAP: 400              #Max number of items allowed on a map.
-    MAP_VISITED_SIZE: 5                 #Max length for last mapids visited by a player. This is used to recover and update drops on these maps accordingly with player actions.
+    MAP_VISITED_SIZE: 2                 #Max length for last mapids visited by a player. This is used to recover and update drops on these maps accordingly with player actions.
     MAP_DAMAGE_OVERTIME_INTERVAL: 5000  #Interval in milliseconds between map environment damage (e.g. El Nath and Aqua Road surrondings).
 
     #Channel Mob Disease Monitor Configuration
@@ -458,7 +458,7 @@ server:
     BUYBACK_COOLDOWN_MINUTES: 5         #Sets the time the player must wait before using buyback again.
 
     # Login timeout by shavit
-    TIMEOUT_DURATION: 3600000               # Kicks clients who don't send any packet to the game server in due time (in millisseconds).
+    TIMEOUT_DURATION: 720000               # Kicks clients who don't send any packet to the game server in due time (in millisseconds).
 
     #Event End Timestamp
     EVENT_END_TIMESTAMP: 1428897600000

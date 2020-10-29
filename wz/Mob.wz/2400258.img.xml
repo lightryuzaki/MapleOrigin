@@ -642,7 +642,7 @@
         <int name="acc" value="200"/>
         <int name="eva" value="38"/>
         <int name="pushed" value="10000"/>
-        <int name="exp" value="40000"/>
+        <int name="exp" value="35000"/>
         <int name="summonType" value="1"/>
         <int name="category" value="8"/>
         <string name="mobType" value="15N"/>

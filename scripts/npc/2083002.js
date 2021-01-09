@@ -52,8 +52,15 @@ function action(mode, type, selection) {
         cm.warp(240050600);
         cm.dispose();
 	} else {
-	    if (cm.reachedRewardLimit(MapleExpeditionType.HORNTAIL)) {
-            cm.getClient().getWorldServer().removeUnclaimed(MapleExpeditionBossLog.BossLogEntry.HORNTAIL, cm.getPlayer().getId());
+	    var expedType = MapleExpeditionType.HORNTAIL;
+	    var bossLogEntry = MapleExpeditionBossLog.BossLogEntry.HORNTAIL;
+	    if (cm.getMapId() == 240060201) {
+	        expedType = MapleExpeditionType.CHAOS_HORNTAIL;
+            bossLogEntry = MapleExpeditionBossLog.BossLogEntry.CHAOS_HORNTAIL;
+	    }
+
+	    if (cm.reachedRewardLimit(expedType)) {
+            cm.getClient().getWorldServer().removeUnclaimed(bossLogEntry, cm.getPlayer().getId());
 			cm.getPlayer().dropMessage(6,"You have already reached your limit on GMLs for this boss");
             cm.warp(240050600);
             cm.dispose();
@@ -61,7 +68,7 @@ function action(mode, type, selection) {
             cm.sendNext("Please make room in your inventory first!");
             cm.dispose();
         } else {
-            cm.getClient().getWorldServer().removeUnclaimed(MapleExpeditionBossLog.BossLogEntry.HORNTAIL, cm.getPlayer().getId());
+            cm.getClient().getWorldServer().removeUnclaimed(bossLogEntry, cm.getPlayer().getId());
             cm.warp(240050600);
             cm.dispose();
         }

@@ -38,7 +38,7 @@ public enum MapleExpeditionType {
     ZAKUM(6, 30, 50, 255, 5),
     HORNTAIL(6, 30, 100, 255, 5),
     CHAOS_ZAKUM(6, 30, 120, 255, 5),
-    CHAOS_HORNTAIL(6, 30, 120, 255, 5),
+    CHAOS_HORNTAIL(6, 30, 170, 255, 5),
     ARIANT(2, 7, 20, 30, 5),
     ARIANT1(2, 7, 20, 30, 5),
     ARIANT2(2, 7, 20, 30, 5),

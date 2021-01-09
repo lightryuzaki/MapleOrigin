@@ -51,7 +51,7 @@ public class MapleExpeditionBossLog {
         VONLEON(1, 1, true, (short)  20, (short) 35),
         ARKARIUM(1, 1, true, (short)  30, (short) 45),
         KREXEL(2, 1, false, (short) 1, (short) 1),
-        CHAOS_HORNTAIL(1, 1, false, (short) 3, (short) 3),;
+        CHAOS_HORNTAIL(1, 1, false, (short) 6, (short) 6);
         //EMPRESS(1, 1, false);
 
         private int entries;
@@ -251,6 +251,14 @@ public class MapleExpeditionBossLog {
 
         if (countPlayerEntries(cid, boss) >= boss.entries) {
             return false;
+        }
+
+        if (boss == BossLogEntry.HORNTAIL) { // if doing HT, check they didnt do CHT already
+            if (countPlayerEntries(cid, BossLogEntry.CHAOS_HORNTAIL) > 0)
+                return false;
+        } else if (boss == BossLogEntry.CHAOS_HORNTAIL) { // if attempting Chaos Horntail, check to make sure they didnt do normal HT at all
+            if (countPlayerEntries(cid, BossLogEntry.HORNTAIL) > 0)
+                return false;
         }
 
         if (log) {
